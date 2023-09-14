@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anannya - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(192 192 233);
+            color: rgb(255, 255, 255);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(56, 56, 181);
+        }
+
+        main hr {
+            border: 0;
+            background-color: aliceblue;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(125, 125, 213);
+            font-size: 1.02rem;
+        }
+
+
+        .About {
+            display: flex;
+            justify-content: space-around;
+            margin: 70px 0;
+        }
+
+        .About>div {
+            width: 30%;
+            font-size: 2rem;
+        }
+
+
+        .leftSection {
+            width: 30px;
+            margin: 30px 0;
+        }
+
+        .leftSection .btn {
+            background-color: rgb(153 153 220);
+            color: rgb(56, 56, 181);
+            border: 2px solid rgb(56, 56, 181);
+            border-radius: 6px;
+            font-size: 20px;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .leftSection .btn :hover {
+            color: rgb(125, 125, 213);
+            font-size: 20.2px;
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .rightSection img {
+            width: 110%;
+        }
+
+        .purple {
+            color: rgb(56, 56, 181);
+        }
+
+        #element {
+            color: rgb(56, 56, 181);
+        }
+
+        .Skills {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .Skills h2 {
+            font-size: 1.9rem;
+            color: rgb(56, 56, 181);
+            border: 2rem;
+        }
+
+        .skills__container {
+            row-gap: 2rem;
+        }
+
+        .skills__subtitle {
+            font-size: 5rem;
+            margin-bottom: 2px;
+        }
+
+        .skills__text {
+            margin: 17px 0;
+        }
+
+        
+        .skills__data {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            font-weight: 9px;
+            padding: 1rem 1.5rem;
+            margin-bottom: auto;
+            border-radius: .5rem;
+            box-shadow: 0 4px 25px rgb(0 0 0 / 15%);
+        }
+
+        .skills__icon {
+            font-size: 2rem;
+            margin: auto;
+            color: black;
+        }
+
+
+        .skills__names {
+            display: flex;
+        }
+
+        .skills__bar {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(125, 125, 213);
+            height: .25rem;
+            border-radius: .5rem;
+            z-index: var(--z-back);
+        }
+
+        .skills__html {
+            width: 95%;
+
+        }
+
+        .skills__css {
+            width: 95%;
+
+        }
+
+        .skills__js {
+            width: 95%;
+
+        }
+
+        .skills__njs {
+            width: 95%;
+
+        }
+
+        .Projects {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .Projects h1 {
+            font-size: 1.9rem;
+            color: rgb(56, 56, 181);
+        }
+
+        .gray {
+            color: gray;
+        }
+
+        .Projects .box {
+            background: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+            margin-top: 4rem;
+        }
+
+        .Projects .vertical {
+            width: 2px;
+            height: 93px;
+            background-color: white;
+            margin: 0 100px;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 85px;
+            color: gray;
+            width: 150px;
+            font-size: 12px;
+        }
+
+        #contact .contact {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .contact h1 {
+            font-size: 1.9rem;
+            color: rgb(56, 56, 181);
+        }
+
+        .contact h2 {
+            font-size: 1.02rem;
+            color: rgb(82, 82, 216);
+        }
+
+        #contact .contact-items {
+            display: flex;
+            padding: 1.5rem 1.5rem;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 4rem;
+        }
+
+        #contact .contact-item {
+            display: flex;
+            padding: 1rem 2.6rem;
+            border-radius: .5rem;
+            box-shadow: 0 4px 25px rgb(0 0 0 / 15%);
+            justify-content: space-between;
+            margin: 0;
+            width: 12rem;
+            height: 6.5rem;
+        }
+
+        #contact .contact-item .icon {
+            height: 100px;
+            width: 100px;
+        }
+
+        #contact .contact-item .icon img {
+            width: 35px;
+            position: relative;
+            top: -2px;
+            left: -2px;
+        }
+
+        #contact .contact-item .contact-info {
+            width: 790%;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .footer {
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        footer {
+            background-color: rgb(135, 135, 211);
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: rgb(202, 202, 202);
+        }
+
+        footer ul {
+
+            justify-content: center;
+        }
+
+        footer ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        footer ul li a:hover {
+            color: rgb(56, 56, 181);
+            font-size: 1.02rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Anannya Naiya</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home </a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="About">
+            <div class="leftSection">
+                Hi, my name is <span class="purple">Anannya</span>
+                <div>and I am a</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn"><a name="\">Download resume</a></button>
+                    <button class="btn"><a name="\">Visit Github</a></button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="dev.png" alt="">
+            </div>
+        </section>
+
+        <hr>
+        <section class="Skills section" id="skills">
+            <span class="gray">What I Do</span>
+            <h2>SKILLS</h2>
+            <div class="skills__container bd-grid">
+                <div>
+
+                    <p class="skills__text">I am aspiring to be a Full stack Developer and these are the skills I have
+                        learned so far</p>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-html5 skills__icon'></i>
+                            <span class="skills__name">HTML5</span>
+                        </div>
+                        <div>
+                            <span class="skills__percentage">95%</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-css3 skills__icon'></i>
+                            <span class="skills__name">CSS3</span>
+                        </div>
+                        <div>
+                            <span class="skills__percentage">80%</span>
+                        </div>
+                        <div class="skills__bar skills__css"></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-javascript skills__icon'></i>
+                            <span class="skills__name">JavaScript</span>
+                        </div>
+                        <div>
+                            <span class="skills__percentage">70%</span>
+                        </div>
+                        <div class="skills__bar skills__js"></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-nodejs skills__icon'></i>
+                            <span class="skills__name">NodeJS</span>
+                        </div>
+                        <div>
+                            <span class="skills__percentage">50%</span>
+                        </div>
+                        <div class="skills__bar skills__njs"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <section class="Projects">
+            <span class="gray">What I have done so far</span>
+            <h1>PROJECTS</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img src="html.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        HTML
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="fb.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        Facebook
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="x.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        Twitter
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="yt.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        YouTube
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="insta.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        Instagram
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img src="wap.png" alt="" class="image-top">
+                    <div class="vertical-title">
+                        WhatsApp
+                    </div>
+                    <div class="vertical-desc">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor error, delectus
+                        officia perspiciatis dolorem consectetur molestiae quidem, quas doloremque, quod eaque hic.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="contact">
+            <div class="contact container">
+                <div>
+                    <h1 class="section-title">CONTACT INFO</h1>
+                </div>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png"></div>
+                        <div class="contact-info">
+                            <h2>Phone</h2>
+                            <p>+91 8907 539 259</p>
+                            <p>+91 7330 894 624</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png"></div>
+                        <div class="contact-info">
+                            <h2>Email</h2>
+                            <p>anannya@gmail
+                                .com</p>
+                        </div>
+
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png"></div>
+                        <div class="contact-info">
+                            <h2>Address</h2>
+                            <p>Kolkata, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Anannya's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li><a href="/">Facebook</li></a>
+                    <li><a href="/">Instagram</li></a>
+                    <li><a href="/">Linkdln</li></a>
+                    <li><a href="/">Twitter</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; www.anannyasportfolio.com | All rights reserved
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', '&amp; Web Designer.'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
